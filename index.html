@@ -84,7 +84,8 @@
         //config.devicePixelRatio = 1;
         //unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)&&window.innerHeight<window.innerWidth) {
-        unityInstance.SetFullscreen(1);
+        canvas.style.width= window.innerWidth-100+'px';
+        canvas.style.height = (window.innerWidth-100)/960*540 +'px';
       }else{
         canvas.style.width = "960px";
         canvas.style.height = "540px";
