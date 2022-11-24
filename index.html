@@ -95,7 +95,11 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)&&window.innerHeight>window.innerWidth) {
+            alert("請將手機轉為橫式使用");
+            }else{
+              unityInstance.SetFullscreen(1);
+            }
           };
         }).catch((message) => {
           alert(message);
