@@ -103,13 +103,13 @@
     } else if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight < window.innerWidth) {
       var x = window.innerWidth/960;
       var y = window.innerHeight/540;
-
-          console.log(x.toFixed(1));
+      var w=x.toFixed(1)<y.toFixed(1)?x.toFixed(1):y.toFixed(1);
+          console.log(w);
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='none';
 
-      canvas.style.width = 960*y.toFixed(1)+'px';
-      canvas.style.height = 540*y.toFixed(1)+'px';
+      canvas.style.width = 960*w+'px';
+      canvas.style.height = 540*w+'px';
     } else {
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='block';
