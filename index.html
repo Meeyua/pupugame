@@ -101,14 +101,15 @@
       //config.devicePixelRatio = 1;
       //unityShowBanner('WebGL builds are not supported on mobile devices.');
     } else if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight < window.innerWidth) {
-      var x = window.innerHeight/540;
+      var x = window.innerWidth/960;
+      var y = window.innerHeight/540;
 
           console.log(x.toFixed(1));
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='none';
 
-      canvas.style.width = 960*x+'px';
-      canvas.style.height = 540*x+'px';
+      canvas.style.width = 960*y.toFixed(1)+'px';
+      canvas.style.height = 540*y.toFixed(1)+'px';
     } else {
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='block';
