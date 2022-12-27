@@ -103,9 +103,9 @@
       //config.devicePixelRatio = 1;
       //unityShowBanner('WebGL builds are not supported on mobile devices.');
     } else if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight < window.innerWidth) {
-      var x = parseInt(window.innerWidth/960);
+      var x = window.innerHeight/540;
 
-          console.log(x,window.innerHeight);
+          console.log(x);
       var mobilehide = document.getElementsByClassName('mobile-hide');
       for(var i=0;i<mobilehide.length;i++){
         mobilehide[i].style.display='none';
