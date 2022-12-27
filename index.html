@@ -22,14 +22,14 @@
 <body onresize="resized()">
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=540></canvas>
-    <div id="unity-loading-bar" class="mobile-hide">
+    <div id="unity-loading-bar">
       <div id="unity-logo"></div>
       <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
     </div>
-    <div id="unity-warning" class="mobile-hide"> </div>
-    <div id="unity-footer" class="mobile-hide">
+    <div id="unity-warning"> </div>
+    <div id="unity-footer">
       <div id="unity-webgl-logo"></div>
       <div id="unity-fullscreen-button"></div>
       <div id="unity-build-title" style="color:white;">阿特小劇場</div>
@@ -91,10 +91,8 @@
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight > window.innerWidth) {
       //container.className = "unity-mobile";
-      var mobilehide = document.getElementsByClassName('mobile-hide');
-      for(var i=0;i<mobilehide.length;i++){
-        mobilehide[i].style.display='block';
-      }
+      var mobilehide = document.getElementById('unity-footer');
+        mobilehide.style.display='block';
       canvas.style.width = "960px";
       canvas.style.height = "540px";
 
@@ -106,18 +104,14 @@
       var x = window.innerHeight/540;
 
           console.log(x);
-      var mobilehide = document.getElementsByClassName('mobile-hide');
-      for(var i=0;i<mobilehide.length;i++){
-        mobilehide[i].style.display='none';
-      }
+      var mobilehide = document.getElementById('unity-footer');
+        mobilehide.style.display='none';
 
       canvas.style.width = '480px';
       canvas.style.height = '270px';
     } else {
-      var mobilehide = document.getElementsByClassName('mobile-hide');
-      for(var i=0;i<mobilehide.length;i++){
-        mobilehide[i].style.display='block';
-      }
+      var mobilehide = document.getElementById('unity-footer');
+        mobilehide.style.display='block';
       canvas.style.width = "960px";
       canvas.style.height = "540px";
     }
