@@ -88,9 +88,9 @@
       //config.devicePixelRatio = 1;
       //unityShowBanner('WebGL builds are not supported on mobile devices.');
     } else if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight < window.innerWidth) {
-      var x = window.innerWidth/960;
+      var x = parseInt(window.innerWidth/960);
 
-          console.log(x);
+          console.log(x,window.innerHeight);
 
       canvas.style.width = '480px';
       canvas.style.height = '270px';
@@ -112,7 +112,7 @@
         loadingBar.style.display = "none";
         fullscreenButton.onclick = () => {
           if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent) && window.innerHeight > window.innerWidth) {
-            alert("請將手機轉為橫式使用");
+            alert("請將裝置轉為橫式使用");
           } else {
             unityInstance.SetFullscreen(1);
           }
