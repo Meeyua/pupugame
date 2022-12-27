@@ -107,8 +107,8 @@
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='none';
 
-      canvas.style.width = '480px';
-      canvas.style.height = '270px';
+      canvas.style.width = window.innerWidth*x+'px';
+      canvas.style.height = window.innerHeight*x+'px';
     } else {
       var mobilehide = document.getElementById('unity-footer');
         mobilehide.style.display='block';
