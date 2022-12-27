@@ -93,7 +93,7 @@
       //container.className = "unity-mobile";
       var mobilehide = document.getElementsByClassName('mobile-hide');
       for(var i=0;i<mobilehide.length;i++){
-        mobilehide.style.display='block';
+        mobilehide[i].style.display='block';
       }
       canvas.style.width = "960px";
       canvas.style.height = "540px";
@@ -108,7 +108,7 @@
           console.log(x,window.innerHeight);
       var mobilehide = document.getElementsByClassName('mobile-hide');
       for(var i=0;i<mobilehide.length;i++){
-        mobilehide.style.display='none';
+        mobilehide[i].style.display='none';
       }
 
       canvas.style.width = '480px';
@@ -116,7 +116,7 @@
     } else {
       var mobilehide = document.getElementsByClassName('mobile-hide');
       for(var i=0;i<mobilehide.length;i++){
-        mobilehide.style.display='block';
+        mobilehide[i].style.display='block';
       }
       canvas.style.width = "960px";
       canvas.style.height = "540px";
